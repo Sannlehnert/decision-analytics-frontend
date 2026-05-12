@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme {
+  --font-principal: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-secundaria: 'Crimson Text', Georgia, 'Times New Roman', serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --color-fondo-principal: #f9f7f4;
+  --color-fondo-superficie: #ffffff;
+  --color-fondo-elevado: #f5f2ed;
+
+  --color-texto-primario: #1a1917;
+  --color-texto-secundario: #5c5954;
+  --color-texto-terciario: #8c8982;
+  --color-texto-inverso: #f9f7f4;
+
+  --color-borde: #e3ded6;
+  --color-borde-foco: #8c7853;
+
+  --color-acento: #8c7853;
+  --color-acento-hover: #6b5c3f;
+  --color-acento-claro: #f0ebe0;
+  --color-acento-texto: #5c4a2e;
+
+  --color-exito: #4a7c59;
+  --color-exito-claro: #edf7f0;
+
+  --color-error: #b84c4c;
+  --color-error-claro: #fdf0f0;
+
+  --color-advertencia: #b8863c;
+  --color-advertencia-claro: #fdf6ed;
+
+  --color-informacion: #4c6b8c;
+  --color-informacion-claro: #edf2f7;
+}
+
+@layer base {
+  body {
+    @apply font-principal text-base text-texto-primario bg-fondo-principal;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-secundaria font-semibold text-texto-primario;
+    line-height: 1.15;
+  }
+
+  h1 { font-size: 2.441rem; }
+  h2 { font-size: 1.953rem; }
+  h3 { font-size: 1.563rem; }
+  h4 { font-size: 1.25rem; }
+
+  p { max-width: 65ch; }
+
+  a {
+    @apply text-acento no-underline transition-colors duration-150 ease-out;
+  }
+
+  a:hover { @apply text-acento-hover; }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-borde-foco;
+  }
+}
+
+@utility sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@utility truncar {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@utility contenedor-app {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@layer base {
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: #8c8982;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: #5c5954; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
