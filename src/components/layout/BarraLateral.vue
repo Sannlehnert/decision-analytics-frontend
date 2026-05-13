@@ -37,7 +37,7 @@ function esRutaActiva(ruta) {
     <!-- Logo -->
     <div class="h-14 flex items-center px-4 border-b border-borde shrink-0">
       <button @click="navegar('/')" class="font-secundaria text-lg font-semibold text-texto-primario tracking-tight bg-transparent border-none cursor-pointer">
-        Decision Analytics
+        Decision Lab
       </button>
     </div>
 

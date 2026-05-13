@@ -15,7 +15,7 @@ async function manejarEnvio() {
 <template>
   <div class="min-h-screen flex items-center justify-center p-4 bg-fondo-principal">
     <div class="w-full max-w-md bg-fondo-superficie border border-borde rounded-xl p-6 lg:p-8">
-      <h1 class="font-secundaria text-2xl font-semibold mb-1">Decision Analytics</h1>
+      <h1 class="font-secundaria text-2xl font-semibold mb-1">Decision Lab</h1>
       <p class="text-texto-secundario text-sm mb-6">Iniciá sesión para continuar</p>
 
       <AlertaMensaje v-if="error" :mensaje="error" tipo="error" @cerrar="limpiarError" />
